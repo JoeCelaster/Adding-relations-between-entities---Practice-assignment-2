@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductCard from './components/ProductCard';
 import './App.css';
+import RatingWidget from './components/RatingWidget';
 
 const initialProducts = [
   {
@@ -35,7 +36,9 @@ function App() {
 
   return (
     <div>
-     {/* code here */}
+     {initialProducts.map((item,i)=>(
+      <ProductCard key={i} name={item.name} description={item.description} image={item.image} avgRating={item.avgRating} totalRatings={item.totalRatings}/>
+     ))}
     </div>
   );
 }
